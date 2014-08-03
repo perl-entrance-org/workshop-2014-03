@@ -35,7 +35,7 @@ values 関数はその関数の value を配列にして返してくれます。
         affiliation => 'NIRVANA'
     );
     delete $hash{affiliation};
-    # この時、%hash は以下のようになっている
+    # この時、%hash は以下のようになっています
     # %hash = ( name => 'Kurt', job => 'Guitarist' );
 
 delete 関数は指定した hash の key に対応する value を削除します
