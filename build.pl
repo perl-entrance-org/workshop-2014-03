@@ -10,7 +10,8 @@ my $dst_dir = '.';
 my @slides  = qw/
   intro.md
   array-func.md
-  qw.md hash.md
+  qw.md
+  hash.md
   hash-func.md
   reference.md
   /;
