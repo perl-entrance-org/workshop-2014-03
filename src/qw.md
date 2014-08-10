@@ -38,8 +38,8 @@
 ## split
 split は指定したパターンに従って文字列を分割します
 
-    my $poem  = "I Love Python.";
-    my @words = split / /, $poem; # <= ('I', 'Love', 'Python.')
+    my $poem  = "I Love Perl.";
+    my @words = split / /, $poem; # <= ('I', 'Love', 'Perl.')
 
 引数として与えた文字列を // でくくった文字 (上の例だと半角スペース) で分割して配列に格納します。  
   
@@ -48,9 +48,9 @@ split は指定したパターンに従って文字列を分割します
 ## join
 join は 分割された文字列をくっつけて1つの文字列にします。(split の逆の働きですね)
 
-    my @words = qw( I Love Ruby. ); # <= qw ショートカット
+    my @words = qw( I Love Perl. ); # <= qw ショートカット
     my $poem  = join '_', @words;
-    print $poem;  # <= 'I_Love_Ruby.'
+    print $poem;  # <= 'I_Love_Perl.'
 
 join の受け取る第1引数は糊のようなものです。リストの要素をくっつけるときに、その間にはさみます。  
 (今回の場合だと、 '\_' という風に指定しているので、リストの各要素をアンダースコアでくっつけます)  
