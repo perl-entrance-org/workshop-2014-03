@@ -26,14 +26,14 @@
 ## qw ショートカット
     # これは困った! エラーになってしまう!
     # デリミタがスラッシュ (/) で、要素中にもスラッシュが含まれてしまっている
-    qw/http://www.google.com http://www.yahoo.com/
+    qw/http://www.perl-entrance.org http://www.yahoo.com/
 
 解決法は2つ
 
     # 1. スラッシュをバックスラッシュでエスケープしてあげる
-    qw/ http:\/\/www.google.com http:\/\/www.yahoo.com /  # <= 読みにくく感じるかもしれない
+    qw/ http:\/\/www.perl-entrance.org http:\/\/www.yahoo.com /  # <= 読みにくく感じるかもしれない
     # 2. デリミタを変える
-    qw! http://www.google.com http://www.yahoo.com !      # <= ちょっと読みやすいかもしれない
+    qw! http://www.perl-entrance.org http://www.yahoo.com !      # <= ちょっと読みやすいかもしれない
 
 ## split
 split は指定したパターンに従って文字列を分割します
