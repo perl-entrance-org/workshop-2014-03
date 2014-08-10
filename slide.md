@@ -4,7 +4,7 @@
 ___
 ##今日の流れ
 - 前回の復習
-- 配列::More
+- 配列 (関数)
 - ハッシュ
 - リファレンス
 
@@ -40,7 +40,7 @@ ___
 の `sum.pl` と `even_or_odd.pl` をやってみましょう
 
 ---
-# 配列::More
+# 配列 (関数)
 
 ___
 ## 配列
@@ -147,35 +147,35 @@ ___
 
 ___
 ## qw ショートカット
-    # これは困った！ エラーになってしまう！
+    # これは困った! エラーになってしまう!
     # デリミタがスラッシュ (/) で、要素中にもスラッシュが含まれてしまっている
-    qw/http://www.google.com http://www.yahoo.com/
+    qw/http://www.perl-entrance.org http://www.yahoo.com/
 
 解決法は2つ
 
     # 1. スラッシュをバックスラッシュでエスケープしてあげる
-    qw/ http:\/\/www.google.com http:\/\/www.yahoo.com /  # <= 読みにくく感じるかもしれない
+    qw/ http:\/\/www.perl-entrance.org http:\/\/www.yahoo.com /  # <= 読みにくく感じるかもしれない
     # 2. デリミタを変える
-    qw! http://www.google.com http://www.yahoo.com !      # <= ちょっと読みやすいかもしれない
+    qw! http://www.perl-entrance.org http://www.yahoo.com !      # <= ちょっと読みやすいかもしれない
 
 ___
 ## split
 split は指定したパターンに従って文字列を分割します
 
-    my $poem  = "I Love Python.";
-    my @words = split / /, $poem; # <= ('I', 'Love', 'Python.')
+    my $poem  = "I Love Perl.";
+    my @words = split / /, $poem; # <= ('I', 'Love', 'Perl.')
 
 引数として与えた文字列を // でくくった文字 (上の例だと半角スペース) で分割して配列に格納します。  
   
-(ところで、// は正規表現リテラルと呼ばれるものです。正規表現リテラルの話は長くなるので、次回以降に紹介します。今は「そういうものなんだ…」と耐えて下さい！！)
+(ところで、// は正規表現リテラルと呼ばれるものです。正規表現リテラルの話は長くなるので、次回以降に紹介します。今は「そういうものなんだ…」と耐えて下さい)
 
 ___
 ## join
-join は 分割された文字列をくっつけて1つの文字列にします。(split の逆の働きですね！)
+join は 分割された文字列をくっつけて1つの文字列にします。(split の逆の働きですね)
 
-    my @words = qw( I Love Ruby. ); # <= qw ショートカットだ！
+    my @words = qw( I Love Perl. ); # <= qw ショートカット
     my $poem  = join '_', @words;
-    print $poem;  # <= 'I_Love_Ruby.'
+    print $poem;  # <= 'I_Love_Perl.'
 
 join の受け取る第1引数は糊のようなものです。リストの要素をくっつけるときに、その間にはさみます。  
 (今回の場合だと、 '\_' という風に指定しているので、リストの各要素をアンダースコアでくっつけます)  
