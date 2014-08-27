@@ -83,6 +83,16 @@
 あとは、とてつもなく長い引数になってしまった場合とか、「この引数はオプショナルにしたいなー」という場合とかに便利ですが、
 ちょっと内容が難しくなりそうなので、ここでの詳しい説明は避けます。
 
+## ハッシュをプリントする
+    my %hash = (
+        name        => 'Kurt',
+        job         => "Guitarist",
+        affiliation => 'NIRVANA'
+    );
+    print %hash; # => nameKurtjobGuitaristaffiliationNIRVANA
+
+変数を出力する場合は、スカラー、配列と同様に `print` を用います。
+
 ## ハッシュをダンプする
     use Data::Dumper;
     my %hash = (
