@@ -283,6 +283,17 @@ ___
 ちょっと内容が難しくなりそうなので、ここでの詳しい説明は避けます。
 
 ___
+## ハッシュをプリントする
+    my %hash = (
+        name        => 'Kurt',
+        job         => "Guitarist",
+        affiliation => 'NIRVANA'
+    );
+    print %hash; # => nameKurtjobGuitaristaffiliationNIRVANA
+
+変数を出力する場合は、スカラー、配列と同様に `print` を用います。
+
+___
 ## ハッシュをダンプする
     use Data::Dumper;
     my %hash = (
@@ -362,8 +373,37 @@ ___
 リファレンスを使うと複雑なデータ構造を表現出来たりします。
 
 ___
-## どういうこと？
+## どういうこと ?
 例えば、リファレンスを使うとハッシュの中にハッシュを格納し、更にそのハッシュにハッシュを格納する……みたいな複雑なデータ構造を表現出来ます。
+
+___
+## 具体例 (1/3)
+    +----------+----------+
+    |  nqounet | boolfool |
+    +----------+----------+
+    |  macopy  |  papix   |
+    +----------+----------+
+
+テーブルのようなデータ構造を表現したいとき
+
+___
+## 具体例 (2/3)
+
+  my @osaka = ('nqounet', 'boolfool');
+  my @tokyo = ('macopy', 'papix');
+  my @perl_entrance = (@osaka, @tokyo);
+  print $perl_entrance[3]; # => papix
+
+今までの知識であれば、配列を用いて<b>行</b>単位で表現できるが、`n 行 m 列目は papix` という様に表現したいですね。
+
+___
+## 具体例 (3/3)
+  my $osaka = ['nqounet', 'boolfool'];
+  my $tokyo = ['macopy', 'papix'];
+  my @perl_entrance = ($osaka, $tokyo);
+  print $perl_entrance[1]->[1]; # => papix
+
+このように <b>リファレンス</b> を用いることで、複雑なデータ構造を表現することが容易になります。
 
 ___
 ## あとは
@@ -411,7 +451,7 @@ ___
 SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその実体が格納されているアドレスです。
 
 ___
-## おれは中身が欲しいんだけど？
+## アドレスではなく中身が欲しいんだけど ?
 そこで出てくるのが“デリファレンス”です
 
 ___
