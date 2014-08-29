@@ -127,9 +127,9 @@ SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその�
 
 ## 練習問題
     my $papix = {
-        name        => 'papix',
+        name    => 'papix',
         address => 'Tokyo',
-        age => 25,
+        age     => 25,
     };
 
 上記のような名前・住所・年齢といった要素を持つリファレンスを作成してみよう。さらに `Data::Dumper` を用いて、リファレンスを出力してみよう。
