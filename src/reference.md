@@ -151,3 +151,11 @@ Perl 5.14 以降はオートデリファレンスという機能が実装され�
 便利っちゃ便利なんですけど、お行儀が悪いので避けられる傾向にあります。  
 (下位互換性を確保できないから、という理由もありますが)
 
+## 練習問題
+[score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります。
+
+- それぞれの人物の`perl`、`ruby`、`python` ... といった分野毎の合計値をそれぞれのリファレンスに追加しましょう
+- `@people` や `@languages` と言った変数に各々のリファレンスや言語などを格納しておくとやりやすいでしょう
+
+## 練習問題
+[practice.md](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/practice.md) には練習問題の続きがあるので、チャレンジしてみて下さい。
