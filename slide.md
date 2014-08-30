@@ -510,7 +510,17 @@ ___
     #           'key' => 'value'
     #         };
 
-いちいち中身を確認するのにデリファレンスするのがだるい！　という時はダンプすると中身をゲロっと見れて便利でしょう。
+中身を確認するのにデリファレンスをするのは面倒なので、`Data::Dumper` を用いてダンプすると良いでしょう。
+
+___
+## 練習問題
+    my $papix = {
+        name    => 'papix',
+        address => 'Tokyo',
+        age     => 25,
+    };
+
+上記のような名前・住所・年齢といった要素を持つリファレンスを作成してみよう。さらに `Data::Dumper` を用いて、リファレンスを出力してみよう。
 
 ___
 ## リファレンスのはまりどころ
@@ -530,10 +540,12 @@ Perl 5.14 以降はオートデリファレンスという機能が実装され�
 (下位互換性を確保できないから、という理由もありますが)
 
 ___
-## 復習問題
+## 練習問題
+[score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります。
 
-- <https://github.com/perl-entrance-org/workshop-2013-03/blob/master/practice.md>
+- それぞれの人物の`perl`、`ruby`、`python` ... といった分野毎の合計値をそれぞれのリファレンスに追加しましょう
+- `@people` や `@languages` と言った変数に各々のリファレンスや言語などを格納しておくとやりやすいでしょう
 
-  - 今回の内容を復習することができる問題集です
-  - ご不明な点があれば, 気軽にスタッフまでお尋ねください
-
+___
+## 練習問題
+[practice.md](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/practice.md) には練習問題の続きがあるので、チャレンジしてみて下さい。
