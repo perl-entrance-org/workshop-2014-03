@@ -114,7 +114,7 @@ ___
 ___
 ## 練習問題
 
-- ('Alice', 'Bob') という配列に対して、紹介した関数を使って操作して ('Amon2', 'Alice', 'Bob', 'Catalyst') という配列を作りましょう
+- ('Alice', 'Bob') という配列に対して、紹介した関数を使って操作して ('Zappa', 'Alice', 'Bob', 'Chris') という配列を作りましょう
 - ('Alice', 'Bob') という配列に対して、紹介した関数を使って操作し、'Alice' を取り出してみましょう
 - ('Alice', 'Bob') という配列に対して、紹介した関数を使って操作し、'Bob' を取り出してみましょう
 
@@ -316,6 +316,7 @@ ___
 - keys
 - values
 - delete
+- exists
 
 ___
 ## keys
@@ -359,10 +360,25 @@ ___
 delete 関数は指定した hash の key に対応する value を削除します
 
 ___
+## exsits
+    my %hash = (
+        name        => 'Kurt',
+        job         => 'Guitarist',
+        affiliation => 'NIRVANA'
+    );
+
+    if (exists $hash{job}) {
+        print "exists"; # => exists
+    }
+
+exists 関数は指定した hash の key が存在するか確認します
+
+___
 ## 練習問題
 
 - 先ほどの問題で作ったハッシュに対して keys を用いて"name: Larry Wall" のように整形して出力してください。
 - 先ほどの問題で作ったハッシュに対して、delete を使って性別の要素を取り除いて下さい
+  - exists を使ってキーが取り除かれているかどうか確認して下さい
 
 ---
 # リファレンス
@@ -378,30 +394,30 @@ ___
 
 ___
 ## 具体例 (1/3)
-    +----------+----------+
-    |  nqounet | boolfool |
-    +----------+----------+
-    |  macopy  |  papix   |
-    +----------+----------+
+         |     0    |     1    |
+    -----+----------+----------+
+      0  |  nqounet | boolfool |
+    -----+----------+----------+
+      1  |  macopy  |  papix   |
+    -----+----------+----------+
 
 テーブルのようなデータ構造を表現したいとき
 
 ___
 ## 具体例 (2/3)
-
-  my @osaka = ('nqounet', 'boolfool');
-  my @tokyo = ('macopy', 'papix');
-  my @perl_entrance = (@osaka, @tokyo);
-  print $perl_entrance[3]; # => papix
+    my @osaka = ('nqounet', 'boolfool');
+    my @tokyo = ('macopy', 'papix');
+    my @perl_entrance = (@osaka, @tokyo);
+    print $perl_entrance[1][1]; # => これはおかしい。エラーになる。
 
 今までの知識であれば、配列を用いて<b>行</b>単位で表現できるが、`n 行 m 列目は papix` という様に表現したいですね。
 
 ___
 ## 具体例 (3/3)
-  my $osaka = ['nqounet', 'boolfool'];
-  my $tokyo = ['macopy', 'papix'];
-  my @perl_entrance = ($osaka, $tokyo);
-  print $perl_entrance[1]->[1]; # => papix
+    my $osaka = ['nqounet', 'boolfool'];
+    my $tokyo = ['macopy', 'papix'];
+    my @perl_entrance = ($osaka, $tokyo);
+    print $perl_entrance[1][1]; # => papix
 
 このように <b>リファレンス</b> を用いることで、複雑なデータ構造を表現することが容易になります。
 
@@ -531,13 +547,6 @@ ___
     print $scalar; # => 'changed!'
 
 リファレンスは参照なので、デリファレンスして更にその中身を変更すると、参照元が破壊されます
-
-___
-## オートデリファレンス
-Perl 5.14 以降はオートデリファレンスという機能が実装されました。  
-その名の通り、明示的にデリファレンスしなくても自動でデリファレンスしてくれます。  
-便利っちゃ便利なんですけど、お行儀が悪いので避けられる傾向にあります。  
-(下位互換性を確保できないから、という理由もありますが)
 
 ___
 ## 練習問題
