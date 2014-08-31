@@ -8,28 +8,28 @@
 例えば、リファレンスを使うとハッシュの中にハッシュを格納し、更にそのハッシュにハッシュを格納する……みたいな複雑なデータ構造を表現出来ます。
 
 ## 具体例 (1/3)
-    +----------+----------+
-    |  nqounet | boolfool |
-    +----------+----------+
-    |  macopy  |  papix   |
-    +----------+----------+
+         |     0    |     1    |
+    -----+----------+----------+
+      0  |  nqounet | boolfool |
+    -----+----------+----------+
+      1  |  macopy  |  papix   |
+    -----+----------+----------+
 
 テーブルのようなデータ構造を表現したいとき
 
 ## 具体例 (2/3)
-
-  my @osaka = ('nqounet', 'boolfool');
-  my @tokyo = ('macopy', 'papix');
-  my @perl_entrance = (@osaka, @tokyo);
-  print $perl_entrance[3]; # => papix
+    my @osaka = ('nqounet', 'boolfool');
+    my @tokyo = ('macopy', 'papix');
+    my @perl_entrance = (@osaka, @tokyo);
+    print $perl_entrance[1][1]; # => これはおかしい。エラーになる。
 
 今までの知識であれば、配列を用いて<b>行</b>単位で表現できるが、`n 行 m 列目は papix` という様に表現したいですね。
 
 ## 具体例 (3/3)
-  my $osaka = ['nqounet', 'boolfool'];
-  my $tokyo = ['macopy', 'papix'];
-  my @perl_entrance = ($osaka, $tokyo);
-  print $perl_entrance[1]->[1]; # => papix
+    my $osaka = ['nqounet', 'boolfool'];
+    my $tokyo = ['macopy', 'papix'];
+    my @perl_entrance = ($osaka, $tokyo);
+    print $perl_entrance[1][1]; # => papix
 
 このように <b>リファレンス</b> を用いることで、複雑なデータ構造を表現することが容易になります。
 
@@ -144,12 +144,6 @@ SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその�
     print $scalar; # => 'changed!'
 
 リファレンスは参照なので、デリファレンスして更にその中身を変更すると、参照元が破壊されます
-
-## オートデリファレンス
-Perl 5.14 以降はオートデリファレンスという機能が実装されました。  
-その名の通り、明示的にデリファレンスしなくても自動でデリファレンスしてくれます。  
-便利っちゃ便利なんですけど、お行儀が悪いので避けられる傾向にあります。  
-(下位互換性を確保できないから、という理由もありますが)
 
 ## 練習問題
 [score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります。
