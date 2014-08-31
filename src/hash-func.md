@@ -3,6 +3,7 @@
 - keys
 - values
 - delete
+- exists
 
 ## keys
     my %hash = (
@@ -42,7 +43,21 @@ values 関数はその関数の value を配列にして返してくれます。
 
 delete 関数は指定した hash の key に対応する value を削除します
 
+## exsits
+    my %hash = (
+        name        => 'Kurt',
+        job         => 'Guitarist',
+        affiliation => 'NIRVANA'
+    );
+
+    if (exists $hash{job}) {
+        print "exists"; # => exists
+    }
+
+exists 関数は指定した hash の key が存在するか確認します
+
 ## 練習問題
 
 - 先ほどの問題で作ったハッシュに対して keys を用いて"name: Larry Wall" のように整形して出力してください。
 - 先ほどの問題で作ったハッシュに対して、delete を使って性別の要素を取り除いて下さい
+  - exists を使ってキーが取り除かれているかどうか確認して下さい
