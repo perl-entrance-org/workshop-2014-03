@@ -14,7 +14,7 @@
     my @keys = keys %hash;
     print "@keys\n";    # <= "name job affiliation"
 
-keys 関数はその関数の key を配列にして返してくれます。
+keys 関数はその hash の key を配列にして返してくれます。
 
 この時、key は順不同になります。
 
@@ -27,7 +27,7 @@ keys 関数はその関数の key を配列にして返してくれます。
     my @values = values %hash;
     print "@values\n";    # <= "Kurt Guitarist NIRVANA"
 
-values 関数はその関数の value を配列にして返してくれます。
+values 関数はその hash の value を配列にして返してくれます。
 
 この時、value は順不同になります。
 
@@ -41,7 +41,7 @@ values 関数はその関数の value を配列にして返してくれます。
     # この時、%hash は以下のようになっています
     # %hash = ( name => 'Kurt', job => 'Guitarist' );
 
-delete 関数は指定した hash の key に対応する value を削除します
+delete 関数は指定した hash の key と、それに対応する value を削除します。
 
 ## exsits
     my %hash = (
@@ -54,10 +54,11 @@ delete 関数は指定した hash の key に対応する value を削除しま�
         print "exists"; # => exists
     }
 
-exists 関数は指定した hash の key が存在するか確認します
+exists 関数は指定した hash の key が存在するか確認します。
 
 ## 練習問題
 
-- 先ほどの問題で作ったハッシュに対して keys を用いて"name: Larry Wall" のように整形して出力してください。
-- 先ほどの問題で作ったハッシュに対して、delete を使って性別の要素を取り除いて下さい
-  - exists を使ってキーが取り除かれているかどうか確認して下さい
+1. 先ほどの練習問題で作ったハッシュの key の一覧を出力してください。
+2. 上記ハッシュから、性別の要素を取り除いて下さい。
+3. 2に機能を追加して、取り除く前に性別の要素が存在するかどうかを確認して下さい。
+4. 3で性別の要素が存在しない場合には、「性別の要素は存在しません」と表示してください。
