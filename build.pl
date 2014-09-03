@@ -14,6 +14,7 @@ my @slides  = qw/
   hash.md
   hash-func.md
   reference.md
+  outro.md
   /;
 my $slide
   = "<!-- このファイルは直接編集せずに src ディレクトリ内を編集し build.pl を実行してください。 -->\n";
