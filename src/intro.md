@@ -1,4 +1,5 @@
-#Perl入学式 #3
+#Perl入学式 第3回
+### 配列操作/ハッシュ/リファレンス編
 
 ##今日の流れ
 - 前回の復習
@@ -14,7 +15,7 @@
 $, @, %, & といった、変数名の前に付く記号の事を指します。
 
 ## リスト
-('値をコンマで区切って', '並べて', 'カッコで囲んだもの')  
+('値をコンマで区切って', '並べて', 'カッコで囲んだもの')
 
 ## 前回の復習
 - 変数
@@ -27,5 +28,5 @@ $, @, %, & といった、変数名の前に付く記号の事を指します。
 # 復習問題
 
 ## 復習問題
-[practice.md](https://github.com/perl-entrance-org/workshop-2014-02/blob/master/practice.md)
-の `sum.pl` と `even_or_odd.pl` をやってみましょう
+[practice.md](https://github.com/perl-entrance-org/perl-entrance-org.github.com/blob/master/2013/handout/perlentrance02/practice.md)
+の `sum.pl` と `even_or_odd.pl` をやってみましょう。
