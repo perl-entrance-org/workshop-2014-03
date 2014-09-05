@@ -27,5 +27,5 @@ $, @, %, & といった、変数名の前に付く記号の事を指します。
 # 復習問題
 
 ## 復習問題
-[practice.md](https://github.com/perl-entrance-org/perl-entrance-org.github.com/blob/master/2013/handout/perlentrance02/practice.md)
+[practice.md](https://github.com/perl-entrance-org/workshop-2014-02/blob/master/practice.md)
 の `sum.pl` と `even_or_odd.pl` をやってみましょう

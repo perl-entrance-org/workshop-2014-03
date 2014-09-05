@@ -36,7 +36,7 @@ ___
 
 ___
 ## 復習問題
-[practice.md](https://github.com/perl-entrance-org/perl-entrance-org.github.com/blob/master/2013/handout/perlentrance02/practice.md)
+[practice.md](https://github.com/perl-entrance-org/workshop-2014-02/blob/master/practice.md)
 の `sum.pl` と `even_or_odd.pl` をやってみましょう
 
 ---
