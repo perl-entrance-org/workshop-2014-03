@@ -8,7 +8,7 @@
 
 また、`revealup`に対応していますので、スライドとして閲覧も可能です。
 
-    $ revealup serve slide.md
+    $ revealup server slide.md
 
 上記コマンドが動作しない場合は、以下の参考記事にインストール方法や使い方が書いてありますのでご覧ください。
 
