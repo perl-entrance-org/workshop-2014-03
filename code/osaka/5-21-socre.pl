@@ -49,16 +49,19 @@ my $uzulla = {
 };
 
 # Q2
-my @people = ( qw/papix boolfool moznion binarian uzulla/ );
-my $languages = ( qw/perl python ruby php binary/ );
+my $people = [ $papix, $boolfool, $moznion, $binarian, $uzulla ];
+my $languages = [ qw/perl python ruby php binary/ ];
 
 # Q1
-for my $e ( @$languages ) {
-    # 各言語のスコアを加算したキーを作る
-    $papix->{'score'}    += $papix->{ $e };
-    $boolbool->{'score'} += $boolfool->{ $e };
-    $moznion->{'score'}  += $moznion->{ $e };
-    $binarian->{'score'} += $binarian->{ $e };
-    $uzulla->{'score'}   += $uzulla->{ $e };
+for my $p ( @$people ) {
+    # $pは各人物のリファレンス
+    $p->{'score'} = 0;
+
+    for my $e ( @$languages ) {
+        # 各言語のスコアを加算したキーを作る
+        $p->{'score'} += $p->{ $e };
+    }
 }
+use Data::Dumper;
+print Dumper( $people );
 
