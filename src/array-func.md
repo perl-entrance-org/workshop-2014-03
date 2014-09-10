@@ -17,7 +17,7 @@
 - 追加
 - 取り出し
 
-できる必要があります
+できる必要があります。
 
 ## 要素の追加
 - push
@@ -34,9 +34,9 @@
 ## push / pop
 
     my @array = ('Alice', 'Bob');
-    push @array, "Chris";     # <= ('Alice', 'Bob', 'Chris')
-    my $element = pop @array; # <= ('Alice', 'Bob')
-    print $element;           # <= 'Chris'
+    push @array, 'Chris';     # ('Alice', 'Bob', 'Chris')
+    my $element = pop @array; # ('Alice', 'Bob')
+    print $element;           # => "Chris"
 
 配列が  
 □□□  
@@ -49,9 +49,9 @@
 ## unshift / shift
 
     my @array = ('Alice', 'Bob');
-    unshift @array, "Zappa";    # <= ('Zappa', 'Alice', 'Bob')
-    my $element = shift @array; # <= ('Alice', 'Bob')
-    print $element;             # <= "Zappa"
+    unshift @array, 'Zappa';    # ('Zappa', 'Alice', 'Bob')
+    my $element = shift @array; # ('Alice', 'Bob')
+    print $element;             # => "Zappa"
 
 配列が  
 □□□  
@@ -63,6 +63,7 @@
 
 ## 練習問題
 
-1. ('Alice', 'Bob') という配列を定義してから、関数を使って 'Alice' を取り出してください
-2. ('Alice', 'Bob') という配列を定義してから、関数を使って 'Bob' を取り出してください
-3. ('Alice', 'Bob') という配列を定義してから、関数を使って ('Zappa', 'Alice', 'Bob', 'Chris') という配列を作ってください
+1. ('Alice', 'Bob') という配列を作って出力してみましょう。
+2. 1.で作った配列から、関数を使って 'Alice' を取り出して出力してみましょう。
+3. 1.で作った配列から、関数を使って 'Bob' を取り出して出力してみましょう。
+4. 1.で作った配列を元に、関数を使って ('Zappa', 'Alice', 'Bob', 'Chris') という配列を作って出力してみましょう。
