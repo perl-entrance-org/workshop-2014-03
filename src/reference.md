@@ -90,7 +90,7 @@ SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその�
 ## デリファレンス (スカラー)
     my $scalar     = 'scalar';
     my $scalar_ref = \$scalar;
-    print $$scalar;
+    print $$scalar_ref;
 
 スカラーをデリファレンスするためには、そのリファレンスの前にスカラーのシジル ($) を置きます。
 
