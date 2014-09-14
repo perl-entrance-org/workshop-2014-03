@@ -498,7 +498,7 @@ ___
 ## デリファレンス (スカラー)
     my $scalar     = 'scalar';
     my $scalar_ref = \$scalar;
-    print $$scalar;
+    print $$scalar_ref;
 
 スカラーをデリファレンスするためには、そのリファレンスの前にスカラーのシジル ($) を置きます。
 
