@@ -77,30 +77,5 @@
 という風に順序が入れ替わったらどうしましょう？ 今まで動いていたコードを書き換えなくてはならなくなります。  
 ハッシュだと、順序ではなく key で対応付けられているので、そういった問題が起こりません。
 
-## ハッシュをプリントする
-    my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
-    );
-    print %hash; # => nameKurtjobGuitaristaffiliationNIRVANA
-
-変数を出力する場合は、スカラー、配列と同様に `print` を用います。しかし `print` するだけでは内容がとてもわかりづらくなります。
-
-## ハッシュをダンプする
-- ハッシュは配列と異なり、ダブルクォートでくくっても展開されません。
-- しかし以下のように `Data::Dumper` モジュールを使うと、中身を見る（ダンプする）ことができて便利です。やってみましょう！
-
-
-    use Data::Dumper;
-    my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
-    );
-    print Dumper(%hash);
-
-
 ## 練習問題
-1. 自分の名前 (name)、性別 (sex)、好きな食べ物 (food) を key にしたハッシュを作ってみましょう。
-2. また、そのハッシュをダンプしてみましょう。
+自分の名前 (name)、性別 (sex)、好きな食べ物 (food) を key にしたハッシュを作ってみましょう。
