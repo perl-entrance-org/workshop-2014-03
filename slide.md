@@ -289,35 +289,9 @@ ___
 ハッシュだと、順序ではなく key で対応付けられているので、そういった問題が起こりません。
 
 ___
-## ハッシュをプリントする
-    my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
-    );
-    print %hash; # => nameKurtjobGuitaristaffiliationNIRVANA
-
-変数を出力する場合は、スカラー、配列と同様に `print` を用います。しかし `print` するだけでは内容がとてもわかりづらくなります。
-
-___
-## ハッシュをダンプする
-- ハッシュは配列と異なり、ダブルクォートでくくっても展開されません。
-- しかし以下のように `Data::Dumper` モジュールを使うと、中身を見る（ダンプする）ことができて便利です。やってみましょう！
-
-
-    use Data::Dumper;
-    my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
-    );
-    print Dumper(%hash);
-
-
-___
 ## 練習問題
 1. 自分の名前 (name)、性別 (sex)、好きな食べ物 (food) を key にしたハッシュを作ってみましょう。
-2. また、そのハッシュをダンプしてみましょう。
+2. key である `name`, `sex`, `food` を用いて、それぞれの value をprintしてみましょう。
 
 ---
 ## ハッシュの便利関数たち
@@ -527,17 +501,26 @@ ___
 また配列同様、波括弧と$を取り除きその代わりにアロー (->) を入れることによりアクセスする事もできます。
 
 ___
-## ダンプ再び
+## リファレンスの中身を丸ごと見る
+中身を確認するために毎回デリファレンスをするのは面倒です。  
+このようなときに `Data::Dumper` モジュールを用いると、一度に中身を見ることができます。
+
+
     use Data::Dumper;
-    my $hash_ref = { key => 'value' };
+    my $hash_ref = {
+        name        => 'Kurt',
+        job         => 'Guitarist',
+        affiliation => 'NIRVANA'
+    };
     print $hash_ref; # => HASH(0x7f88d08060b8)
     print Dumper($hash_ref);
     # $VAR1 = {
-    #           'key' => 'value'
+    #           'name'        => 'Kurt',
+    #           'job'         => 'Guitarist',
+    #           'affiliation' => 'NIRVANA'
     #         };
 
-中身を確認するために毎回デリファレンスをするのは面倒です。  
-このようなときにも `Data::Dumper` を用いてダンプすると一度に中身を見ることができます。
+
 
 ___
 ## 練習問題

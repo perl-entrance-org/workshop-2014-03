@@ -116,17 +116,26 @@ SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその�
 デリファレンスして波括弧でくくり、通常のハッシュのようにアクセスすると内容を得られます。  
 また配列同様、波括弧と$を取り除きその代わりにアロー (->) を入れることによりアクセスする事もできます。
 
-## ダンプ再び
+## リファレンスの中身を丸ごと見る
+中身を確認するために毎回デリファレンスをするのは面倒です。  
+このようなときに `Data::Dumper` モジュールを用いると、一度に中身を見ることができます。
+
+
     use Data::Dumper;
-    my $hash_ref = { key => 'value' };
+    my $hash_ref = {
+        name        => 'Kurt',
+        job         => 'Guitarist',
+        affiliation => 'NIRVANA'
+    };
     print $hash_ref; # => HASH(0x7f88d08060b8)
     print Dumper($hash_ref);
     # $VAR1 = {
-    #           'key' => 'value'
+    #           'name'        => 'Kurt',
+    #           'job'         => 'Guitarist',
+    #           'affiliation' => 'NIRVANA'
     #         };
 
-中身を確認するために毎回デリファレンスをするのは面倒です。  
-このようなときにも `Data::Dumper` を用いてダンプすると一度に中身を見ることができます。
+
 
 ## 練習問題
     my $papix = {
