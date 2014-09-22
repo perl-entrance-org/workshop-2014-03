@@ -25,11 +25,11 @@ favorite\_foodsにアクセスして、その配列リファレンスを配列�
 - [score.pl](https://github.com/perl-entrance-org/workshop-2013-03/blob/master/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります
 
 ## 1. 点数の合計
-- それぞれの人物の`perl`、`ruby`、`python` ... といった分野毎の合計値をそれぞれのリファレンスに追加しましょう
-- `@people` や `@languages` と言った変数に各々のリファレンスや言語などを格納しておくとやりやすいでしょう
+- 各人物の `perl`, `ruby`, `python` ... といった言語の合計値を key `sum` の value としてリファレンスに追加しましょう
+- `@people` や `@languages` といった変数に各人物のリファレンスや言語を格納してからやってみましょう
 
 ## 2. 言語毎の平均
-- 新たに`$average`といったハッシュリファレンスに各々の人物の名前を key として、 `perl`、`ruby`、`python`の平均値を格納してください
+- 新たに`$average`といったハッシュリファレンスを作り、各人物の名前を key として `perl`、`ruby`、`python`の平均値を格納してください
 - 出力には `Data::Dumper` などを使って表示させてください
 
 ## 3. 五段階評価
