@@ -195,6 +195,13 @@ join の受け取る第1引数は糊のようなものです。リストの要�
 第2引数はバラバラになった文字列の配列です。
 
 ___
+## reverse
+reverse は リストを逆順に並べ替えてリストで返します。
+
+    my @lang = qw(perl php ruby python java go);
+    my @reversed = reverse @lang;
+    print "@reversed"; # => go java python ruby php perl
+___
 ## 練習問題
 1. ("0120" "123" "XXX") という内容の配列を qw ショートカットを使って作ってみましょう。
 2. 上の問題で作った配列を繋げてみましょう。なんだか電話番号っぽいので、ハイフン ('-') を間にはさみましょう。
