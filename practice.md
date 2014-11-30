@@ -38,8 +38,8 @@ my $papix = {
 [score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります。
 
 ### 2-1. 点数の合計
-各人物の `perl`, `ruby`, `python` ... といった言語の合計値を key `sum` の value としてリファレンスに追加しましょう。
 
+各人物の `perl`, `ruby`, `python` ... といった言語の合計値を key `sum` の value としてリファレンスに追加しましょう。
 `@people` や `@languages` といった変数に各人物のリファレンスや言語を格納してからやってみましょう。
 
 #### ヒント
@@ -76,7 +76,8 @@ moznion: ??
 
 
 ### 2-2. 言語毎の平均
-各人物の`perl`、`ruby`、`python`の平均値を計算し、新たに作った`$average`という名前のハッシュリファレンスに格納してください。ハッシュリファレンスのkeyは各人物の名前を利用してください。
+各人物の`perl`、`ruby`、`python`の平均値を計算し、新たに作った`$average`という名前のハッシュリファレンスに格納してください。
+ハッシュリファレンスのkeyは各人物の名前を利用してください。
 出力には `Data::Dumper` を使ってみましょう。
 
 #### 出力例
