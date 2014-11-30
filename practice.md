@@ -42,12 +42,29 @@ my $papix = {
 
 `@people` や `@languages` といった変数に各人物のリファレンスや言語を格納してからやってみましょう。
 
+#### ヒント
+
+`$papix` の合計値は `270` なので、以下のようになります。（ただし、key の順番がこの通りになるとは限りません）
+
+```
+my $papix = {
+    name        => 'papix',
+    affiliation => 'namba.pm',
+    perl        => 60,
+    python      => 50,
+    ruby        => 50,
+    php         => 80,
+    binary      => 30,
+    sum         => 270,
+};
+```
+
 #### 出力例
 
 ```
 sum
 ----
-papix: 70
+papix: 270
 boolfool: ??
 moznion: ??
 ....
