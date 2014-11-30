@@ -202,6 +202,17 @@ reverse は リストを逆順に並べ替えてリストで返します。
     my @reversed = reverse @lang;
     print "@reversed"; # => go java python ruby php perl
 ___
+## sort
+sort は リストをルール順に並べ替えてリストで返します。
+
+    my @lang = qw(perl php ruby python java go);
+    my @sorted = sort @lang; 
+    print "@sorted"; # => go java perl php python ruby
+
+今回の例ではルールを指定しなかったので文字コード順に並び替えられました。
+ルールを指定すればさらに複雑な並び替えも可能です。 => http://perldoc.jp/func/sort
+
+___
 ## 練習問題
 1. ("0120" "123" "XXX") という内容の配列を qw ショートカットを使って作ってみましょう。
 2. 上の問題で作った配列を繋げてみましょう。なんだか電話番号っぽいので、ハイフン ('-') を間にはさみましょう。
