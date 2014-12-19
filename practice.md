@@ -23,6 +23,8 @@ favorite\_foodsにアクセスして、その配列リファレンスを配列�
 
 ## 2. score.pl
 
+[score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には、下記のようなハッシュリファレンスがいくつか宣言してあります。
+
 ```
 my $papix = {
     name        => 'papix',
@@ -35,14 +37,15 @@ my $papix = {
 };
 ```
 
-[score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には上記のようなハッシュリファレンスがいくつか宣言してあります。
-
 ### 2-1. 点数の合計
 
-各人物の `perl`, `ruby`, `python` ... といった言語の合計値を key `sum` の value としてリファレンスに追加しましょう。
-`@people` や `@languages` といった変数に各人物のリファレンスや言語を格納してからやってみましょう。
+各人物の `perl`, `ruby`, `python`……といった言語群の合計値を、key `sum` の value として、それぞれのハッシュリファレンスに追加しましょう。
 
 #### ヒント
+
+`@people` や `@languages` といった変数を作り、そこに各ハッシュリファレンスや言語名を格納してやってみましょう。
+
+#### 出力例
 
 `$papix` の合計値は `270` なので、以下のようになります。（ただし、key の順番がこの通りになるとは限りません）
 
@@ -59,32 +62,25 @@ my $papix = {
 };
 ```
 
-#### 出力例
-
-```
-sum
-----
-papix: 270
-boolfool: ??
-moznion: ??
-....
-```
-
 #### 解答例
 
-[解答例1](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/tokyo1/score.pl) [解答例2](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/tokyo1/score_kai.pl) [解答例3](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/osaka/5-21-socre.pl)
+- [解答例1](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/tokyo1/score.pl)
+- [解答例2](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/tokyo1/score_kai.pl)
+- [解答例3](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/osaka/5-21-socre.pl)
 
 
-### 2-2. 言語毎の平均
-各人物の`perl`、`ruby`、`python`の平均値を計算し、新たに作った`$average`という名前のハッシュリファレンスに格納してください。
-ハッシュリファレンスのkeyは各人物の名前を利用してください。
-出力には `Data::Dumper` を使ってみましょう。
+### 2-2. 言語ごとの平均
+
+`$average`というハッシュリファレンスを新たに作り、各人物の`perl`、`ruby`、`python`の平均値を格納してください。
+
+#### ヒント
+
+- ハッシュリファレンスのkeyには各人物の名前を使いましょう。
+- 出力には `Data::Dumper` を使いましょう。
 
 #### 出力例
 
 ```
-average
-----
 $VAR1 = {
           'papix' => ??,
           'boolfool' => ??,
@@ -93,6 +89,8 @@ $VAR1 = {
 ```
 
 ### 2-3. 五段階評価
+
+下記を参考に、各人物の言語ごとの成績を5段階で出力して下さい。
 
 ```
  0 - 19 =>
@@ -103,8 +101,7 @@ $VAR1 = {
 100     => ★★★★★
 ```
 
-それぞれの人物の言語毎の成績を上記を参考に5段階表示して出力して下さい。
-全角文字を出力するので冒頭に`binmode STDOUT, ":utf8";`と書いておくとよいでしょう。
+このとき、全角文字を出力するので、冒頭（`use warnings;`の下など）に`binmode STDOUT, ":utf8";`と書いておくとよいでしょう。
 
 #### 出力例
 
@@ -119,19 +116,27 @@ boolfool
 
 
 ### 2-4. 所属毎のperlハイスコアリストを作る
-`$highscore`という名前のハッシュリファレンスを作成し、所属毎の `perl` のスコアが 60 以上の人の名前を格納しましょう。
-ハッシュリファレンスのkeyは所属`affiliation`を利用して、valueには配列のリファレンスを格納すると良いでしょう。
+
+`$highscore`というハッシュリファレンスを作成し、所属（affiliation）ごとの `perl` のスコアが 60 以上の人の名前を格納しましょう。
+
+#### ヒント
+
+ハッシュリファレンスのkeyには`affiliation`を利用し、valueには配列のリファレンスを格納すると良いでしょう。
 
 #### 出力例
 
 ```
-highscore list
-----
 namba.pm: papix boolfool
 hachioji.pm: ???
 ```
 
 ### 2-5. JSON風Dumper
+
+どのような方法でもよいので、JSON風のDumperを作成してください。
+
+JSONの記法は、以下の出力例を参考にしてください。
+
+#### 出力例
 
 ```
 [
@@ -158,4 +163,3 @@ hachioji.pm: ???
 ]
 ```
 
-どんな方法でもよいので上記のような JSON 風 Dumper を作成して下さい。
