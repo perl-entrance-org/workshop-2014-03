@@ -176,4 +176,4 @@ my $papix = {
 
 
 ## 練習問題
-[practice.md](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/practice.md) には練習問題の続きがあるので、チャレンジしてみてください。
+[practice.md](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/practice.md#scorepl) には練習問題の続きがあるので、チャレンジしてみてください。
