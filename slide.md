@@ -65,7 +65,7 @@ ___
 - 要素間の順序関係を表現したい場合 (e.g. 待ち行列)
 - 要素の単純な集まりとして表現したい場合 (e.g. 集合)
 
-**そしてそれらを同じように操作したい**
+**そしてそれらを同じように操作したい時!**
 
 ___
 ## 配列を自在に操るためには
@@ -124,21 +124,26 @@ ___
 先頭の要素を取り出す→ ■≡□□
 
 ___
-## 練習問題
+## 練習問題(1/2)
 
-1. ('Alice', 'Bob') という配列を作って出力してみましょう。
-2. 関数を使って 'Alice' を取り出して出力してみましょう。
-3. 関数を使って 'Bob' を取り出して出力してみましょう。
-4. 1.の配列を元に、関数を使って ('Zappa', 'Alice', 'Bob', 'Chris') という配列を作って出力してみましょう。
+- 次のような操作をするコードが書かれた`array_func1.pl`を作成しましょう.
+    1. ('Alice', 'Bob', 'Chris') という配列を作って出力してみましょう。
+    2. 関数を使って 'Alice' を取り出して出力してみましょう。
+    3. 関数を使って 'Chris' を取り出して出力してみましょう。
+
+___
+## 練習問題(2/2)
+- 次のような操作をするコードが書かれた`array_func2.pl`を作成しましょう.
+    1. ('Alice', 'Bob', 'Chris') という配列を作って出力してみましょう。
+    4. 1.の配列を元に、関数を使って ('Zappa', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作って出力してみましょう。
 
 ---
 ## qw ショートカット
     my @array = qw( Alice Bob Chris ); # ('Alice', 'Bob', 'Chris')
 
-- これまでのリストの書き方('値をコンマで区切って', '並べて', 'カッコで囲んだもの') と違って、クォート記号が不要です。
+- これまでのリストの書き方, `('値をコンマで区切って', '並べて', 'カッコで囲んだもの')` と違って、クォート記号が不要です。
 - 空白文字 (スペース、タブ、改行など) は捨てられ、残ったものがリストの要素になります。
 - なので、こういう書き方もできます。
-
 
     my @arary = qw(
         Alice
@@ -213,10 +218,16 @@ sort は リストをルール順に並べ替えてリストで返します。
 ルールを指定すればさらに複雑な並び替えも可能です。 => http://perldoc.jp/func/sort
 
 ___
-## 練習問題
-1. ("0120" "123" "XXX") という内容の配列を qw ショートカットを使って作ってみましょう。
-2. 上の問題で作った配列を繋げてみましょう。なんだか電話番号っぽいので、ハイフン ('-') を間にはさみましょう。
-3. 文字列 "/usr/bin/env perl" という文字列をスラッシュ ('/') で分割し、配列に格納してみましょう。
+## 練習問題 (1/2)
+- 次のような挙動をするコードを, `join.pl`として作成しましょう.
+    1. ("0120" "123" "XXX") という内容の配列を qw ショートカットを使って作ってみましょう。
+    2. 上の問題で作った配列を繋げてみましょう。なんだか電話番号っぽいので、ハイフン ('-') を間にはさみましょう。
+
+___
+## 練習問題 (2/2)
+- 次のような挙動をするコードを, `join.pl`として作成しましょう.
+    1. 文字列 "/usr/bin/env perl" という文字列をスラッシュ ('/') で分割し、配列に格納してみましょう。
+    2. その配列を出力した時の結果を予想してみましょう. 予想出来たら実際に出力してみましょう. 期待通りに出力されましたか? そうでない場合, なぜそのような挙動になったか考えてみましょう(わからなければ, サポーターの方に聞いてみましょう!)
 
 ---
 # ハッシュ
@@ -231,32 +242,34 @@ ___
 ___
 ## たとえば
 
-- 名前: Kurt
-- 職業: Guitarist
-- 所属: NIRVANA
+- 名前: Alice
+- 職業: Programmer
+- 所属: PerlEntrance
 
-という人をデータとして表現してみましょう。
+...という人をデータとして表現してみましょう。
 
 ___
 ## 配列と比較してみましょう
-配列の場合だとこんな感じでした。
+配列の場合だとこんな感じになるのではないでしょうか。
 
-    my @user = ('Kurt', 'Guitarist', 'NIRVANA');
-    print $user[0]; # 最初の要素が表示される => "Kurt"
-    print $user[1]; # 2番目の要素が表示される => "Guitarist"
-    print $user[2]; # 3番目の要素が表示される => "NIRVANA"
+    my @user = ('Alice', 'Programmer', 'PerlEntrance');
+    print $user[0]; # 最初の要素が表示される => "Alice"
+    print $user[1]; # 2番目の要素が表示される => "Programmer"
+    print $user[2]; # 3番目の要素が表示される => "PerlEntrance"
+
+`@user`の添字`0`が名前, `1`が職業... といった形で覚えなくてはなりません. 面倒ですね.
 
 ___
 ## これがハッシュだと...
 
     my %user = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
-    print $user{name};        # 名前 (name) が表示される => "Kurt"
-    print $user{job};         # 職業 (job) が表示される => "Guitarist"
-    print $user{affiliation}; # 所属 (affiliation) が表示される => "NIRVANA"
+    print $user{name};        # 名前 (name) が表示される => "Alice"
+    print $user{job};         # 職業 (job) が表示される => "Programmer"
+    print $user{affiliation}; # 所属 (affiliation) が表示される => "PerlEntrance"
 
 なんだかわかりやすい感じがしますね！
 
@@ -288,13 +301,13 @@ ___
 
     my %hash = (
         name => 'Alice',   # ファットコンマ演算子 (=>) で key と value の関係を書ける
-        age    => 16       # 左側の値は文字列として解釈されるのでクォートの必要がない
+        age  => 16       # 左側の値は文字列として解釈されるのでクォートの必要がない
     );
     print "$hash{name}\n"; # => "Alice"
     print "$hash{age}\n";  # => "16"
 
 - ファットコンマ演算子は基本的にコンマのようなものです。
-- ハッシュではファットコンマ演算子を使うと、 key と value の関係性が見やすくなるので便利です。
+- ハッシュではファットコンマ演算子を使うと、 key と value の関係性(`=>`の左がkey, 右がvalue)が見やすくなるので便利です。
 
 ___
 ## 結局ハッシュの何が便利なのか？
@@ -309,6 +322,7 @@ ___
 
 ___
 ## 練習問題
+- 次のような挙動をするプログラムを`hash_profile.pl`という名前で作成しましょう.
 1. 自分の名前 (name)、性別 (sex)、好きな食べ物 (food) を key にしたハッシュを作ってみましょう。
 2. key である `name`, `sex`, `food` を用いて、それぞれの value をprintしてみましょう。
 
@@ -323,9 +337,9 @@ ___
 ___
 ## keys
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     my @keys = keys %hash;
     print "@keys\n";    # => "name job affiliation"
@@ -337,51 +351,51 @@ keys 関数はそのハッシュの key を配列にして返してくれます�
 ___
 ## values
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     my @values = values %hash;
-    print "@values\n";    # => "Kurt Guitarist NIRVANA"
+    print "@values\n"; # => "Alice Programmer PerlEntrance"
 
 values 関数はそのハッシュの value を配列にして返してくれます。
-
-この時、value は順不同になります。
+この時、value は順不同になります(常に同じ順番で帰ってくるとは限りません)。
+もし, 常に同じ順番にしたいのであれば, `sort`を使って並び替えましょう
 
 ___
 ## delete
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     delete $hash{affiliation};
     # この時、%hash は以下のようになっています
-    # %hash = ( name => 'Kurt', job => 'Guitarist' );
+    # %hash = ( name => 'Alice', job => 'Programmer' );
 
 delete 関数は指定したハッシュの key と、それに対応する value を削除します。
 
 ___
 ## exsits
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
 
-    if (exists $hash{job}) {
-        print "exists"; # => exists
-    }
+    if (exists $hash{job})  { print "exists" } # => exists
+    if (exists $hash{team}) { print "exists" } # => 
 
 exists 関数は指定したハッシュの key が存在するかを確認します。
 
 ___
 ## 練習問題
 
-1. 先ほどの練習問題で作ったハッシュの key の一覧を出力してみましょう。
-2. 上記ハッシュから、性別の要素を取り除いてみましょう。
-3. 性別の要素を取り除く前に、それが存在するかどうかを確認してみましょう。
-4. 性別の要素が存在しない場合には、「性別の要素は存在しません」と表示してみましょう。
+- 次のような処理を実行する`hash_func.pl`を作成しましょう.
+    1. `hash_profile.pl`で作ったハッシュを用意し, そのハッシュの key の一覧を出力してみましょう。
+    2. 3.で, 性別の要素を削除します. その前に, `exists`で性別の要素が存在するかどうかを確認してみましょう。
+    3. ハッシュから、性別の要素を取り除いてみましょう。
+    4. 性別の要素を削除した後, きちんと削除したか確認します. key の一覧を表示した後, `exists`で性別の要素が存在しないことを調べ, きちんと削除されている場合は「性別の要素は存在しません」と表示するようにしてみましょう.
 
 ---
 # リファレンス
@@ -551,6 +565,7 @@ ___
 
 上記のような名前・住所・年齢といった要素を持つリファレンスを新たに作成してみましょう。  
 さらに `Data::Dumper` を用いて、作ったリファレンスを出力してみましょう。
+コードは, `reference_dump.pl`という名前で保存してください.
 
 ___
 ## リファレンスのはまりどころ
@@ -577,10 +592,9 @@ my $papix = {
     ruby        => 50,
     php         => 80,
     binary      => 30,
-    sum         => 270,
+    sum         => 270, # => 各言語の合計ポイントが格納されている!
 };
 ```
-
 
 ___
 ## 練習問題

@@ -146,6 +146,7 @@ SCALAR() や ARRAY()、HASH() の括弧の中身に書いてあるのはその�
 
 上記のような名前・住所・年齢といった要素を持つリファレンスを新たに作成してみましょう。  
 さらに `Data::Dumper` を用いて、作ったリファレンスを出力してみましょう。
+コードは, `reference_dump.pl`という名前で保存してください.
 
 ## リファレンスのはまりどころ
     my $scalar     = 'scalar';
@@ -170,10 +171,9 @@ my $papix = {
     ruby        => 50,
     php         => 80,
     binary      => 30,
-    sum         => 270,
+    sum         => 270, # => 各言語の合計ポイントが格納されている!
 };
 ```
-
 
 ## 練習問題
 [practice.md](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/practice.md#scorepl) には練習問題の続きがあるので、チャレンジしてみてください。

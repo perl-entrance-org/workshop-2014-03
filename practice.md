@@ -27,7 +27,6 @@
 
 [詳しい解説](http://hachiojipm.github.io/entry/2013-09-09-02.html)
 
-
 ## 2. score.pl
 
 [score.pl](https://github.com/perl-entrance-org/workshop-2014-03/blob/master/code/score.pl) には、下記のようなハッシュリファレンスがいくつか宣言してあります。
@@ -136,10 +135,9 @@ namba.pm: papix boolfool
 hachioji.pm: ???
 ```
 
-### 2-5. JSON風Dumper
+### 2-5. JSON風Dumper (オプション)
 
-どのような方法でもよいので、JSON風のDumperを作成してください。  
-JSONの記法は、以下の出力例を参考にしてください。
+どのような方法でもよいので、`score.pl`で用意されたデータを, 次のようなフォーマットで出力するようにしてみてください.
 
 #### 出力例
 
@@ -167,4 +165,3 @@ JSONの記法は、以下の出力例を参考にしてください。
   }
 ]
 ```
-

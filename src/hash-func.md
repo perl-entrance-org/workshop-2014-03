@@ -7,9 +7,9 @@
 
 ## keys
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     my @keys = keys %hash;
     print "@keys\n";    # => "name job affiliation"
@@ -20,45 +20,45 @@ keys 関数はそのハッシュの key を配列にして返してくれます�
 
 ## values
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     my @values = values %hash;
-    print "@values\n";    # => "Kurt Guitarist NIRVANA"
+    print "@values\n"; # => "Alice Programmer PerlEntrance"
 
 values 関数はそのハッシュの value を配列にして返してくれます。
-
-この時、value は順不同になります。
+この時、value は順不同になります(常に同じ順番で帰ってくるとは限りません)。
+もし, 常に同じ順番にしたいのであれば, `sort`を使って並び替えましょう
 
 ## delete
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
     delete $hash{affiliation};
     # この時、%hash は以下のようになっています
-    # %hash = ( name => 'Kurt', job => 'Guitarist' );
+    # %hash = ( name => 'Alice', job => 'Programmer' );
 
 delete 関数は指定したハッシュの key と、それに対応する value を削除します。
 
 ## exsits
     my %hash = (
-        name        => 'Kurt',
-        job         => 'Guitarist',
-        affiliation => 'NIRVANA'
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance'
     );
 
-    if (exists $hash{job}) {
-        print "exists"; # => exists
-    }
+    if (exists $hash{job})  { print "exists" } # => exists
+    if (exists $hash{team}) { print "exists" } # => 
 
 exists 関数は指定したハッシュの key が存在するかを確認します。
 
 ## 練習問題
 
-1. 先ほどの練習問題で作ったハッシュの key の一覧を出力してみましょう。
-2. 上記ハッシュから、性別の要素を取り除いてみましょう。
-3. 性別の要素を取り除く前に、それが存在するかどうかを確認してみましょう。
-4. 性別の要素が存在しない場合には、「性別の要素は存在しません」と表示してみましょう。
+- 次のような処理を実行する`hash_func.pl`を作成しましょう.
+    1. `hash_profile.pl`で作ったハッシュを用意し, そのハッシュの key の一覧を出力してみましょう。
+    2. 3.で, 性別の要素を削除します. その前に, `exists`で性別の要素が存在するかどうかを確認してみましょう。
+    3. ハッシュから、性別の要素を取り除いてみましょう。
+    4. 性別の要素を削除した後, きちんと削除したか確認します. key の一覧を表示した後, `exists`で性別の要素が存在しないことを調べ, きちんと削除されている場合は「性別の要素は存在しません」と表示するようにしてみましょう.
